@@ -3,7 +3,7 @@ import Button from "./Button";
 
 function Header() {
   return (
-    <header className="min-h-[80vh] header-bg my-6 mt-6 sm:my-8 md:my-10 md:py-16 pt-10 flex flex-col items-center justify-center text-center gap-4 sm:gap-5">
+    <header className="min-h-[80vh] header-bg my-6 mt-6 sm:my-8 md:my-20 md:py- pt-10 flex flex-col items-center justify-center text-center gap-4 sm:gap-5">
       <div className="symbol-rotate text-2xl sm:text-3xl">()</div>
 
       <div>
@@ -37,8 +37,8 @@ function Header() {
       </div>
 
       <div>
-        <p className="hero-p text-sm sm:text-base md:text-lg px-2 sm:px-0">
-          B.E Electronics And Communication Engineering At Ramco Institute Of Technology
+        <p className="hero-p w-[760px] text-sm sm:text-base md:text-[20px] px-2 sm:px-0">
+          B.E ECE Student Passionate About full-stack development and data driven solution
         </p>
       </div>
 

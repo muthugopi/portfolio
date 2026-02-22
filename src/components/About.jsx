@@ -19,8 +19,8 @@ function About() {
 
         <div className='max-w-[600px] text-[16px] sm:text-[18px] text-[#94a3b8]'>
           <div>
-            <p className="py-2 px-3 w-fit my-2 text-[12px] sm:text-[14px] text-[#94a3b8] border border-[#6366f1] rounded-full">
-              <i className="bi pe-2 bi-mortarboard"></i>
+            <p className="py-2 px-3 w-fit my-2 text-[12px] bg-[#6366f1]/10 sm:text-[14px] text-[#94a3b8] border border-[#6366f1] rounded-full">
+              <i className="bi pe-2 bi-mortarboard-fill"></i>
               Student Developer
             </p>
           </div>
@@ -41,18 +41,18 @@ function About() {
           </p>
 
           <div className='flex flex-wrap gap-3'>
-            <p className="py-2 px-3 text-[12px] sm:text-[14px] text-blue-300 border border-[#6366f1] rounded-full">
-              <i className="bi pe-2 bi-mortarboard"></i>
+            <p className="py-2 px-3 text-[12px] sm:text-[14px] text-blue-300 border border-blue-500 rounded-lg bg-blue-500/10">
+              <i className="bi pe-2 bi-tools"></i>
               Problem Solver
             </p>
 
-            <p className="py-2 px-3 text-[12px] sm:text-[14px] text-purple-300 border border-[#6366f1] rounded-full">
-              <i className="bi pe-2 bi-mortarboard"></i>
+            <p className="py-2 px-3 text-[12px] sm:text-[14px] text-purple-300 border border-purple-500 rounded-lg bg-purple-500/10">
+              <i className="bi pe-2 bi-lightning"></i>
               Quick Learner
             </p>
 
-            <p className="py-2 px-3 text-[12px] sm:text-[14px] text-cyan-300 border border-[#6366f1] rounded-full">
-              <i className="bi pe-2 bi-mortarboard"></i>
+            <p className="py-2 px-3 text-[12px] sm:text-[14px] text-cyan-300 border border-cyan-500 bg-cyan-500/10 rounded-lg">
+              <i className="bi pe-2 bi-gear"></i>
               Team Lead
             </p>
           </div>
@@ -61,7 +61,7 @@ function About() {
       </div>
       <div className="cards grid grid-cols-1 md:grid-cols-3 gap-8 ">
             <Card icon='bi bi-trophy ' content='5+' seconderyContent='Proects Completed'/>
-            <Card icon='bi bi-code ' content='12+' seconderyContent='Tech Stack'/>
+            <Card icon='bi bi-code-slash ' content='12+' seconderyContent='Tech Stack'/>
             <Card icon='bi bi-suitcase' content='Intermediate' seconderyContent='Experience Level'/>
         </div>
     </section>

@@ -30,16 +30,12 @@
   --bg-secondary: #111827;
   --bg-card: #1f2937;
   --bg-gradient:
-    radial-gradient(circle at 20% 20%,
-      rgba(99, 102, 241, 0.15),
-      transparent 40%),
-    radial-gradient(circle at 80% 0%,
-      rgba(79, 70, 229, 0.12),
-      transparent 40%),
-    linear-gradient(135deg,
-      #0f172a,
-      #111827,
-      #1e293b);
+    radial-gradient(circle at 15% 15%, rgba(99, 102, 241, 0.25), transparent 45%),
+    radial-gradient(circle at 85% 10%, rgba(79, 70, 229, 0.18), transparent 45%),
+    radial-gradient(circle at 50% 50%, rgba(139, 92, 246, 0.12), transparent 55%),
+    radial-gradient(circle at 20% 80%, rgba(56, 189, 248, 0.12), transparent 50%),
+    radial-gradient(circle at 80% 80%, rgba(99, 102, 241, 0.12), transparent 50%),
+    linear-gradient(135deg, #0f172a, #111827, #1e293b);
 
   --btn-primary-bg: #6366f1;
   --btn-primary-hover: #4f46e5;
@@ -135,19 +131,31 @@ h1 {
 
 
 @keyframes floatSymbol {
-  0%, 100% {
+
+  0%,
+  100% {
     transform: translateY(0);
   }
+
   50% {
     transform: translateY(15px);
   }
 }
 
 @keyframes rotate {
-  0%{transform: rotate(0deg);}
-  50% {transform: rotate(180deg);}
-  100% {transform: rotate(360deg);}
+  0% {
+    transform: rotate(0deg);
+  }
+
+  50% {
+    transform: rotate(180deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
 }
+
 .t-p {
   background-color: var(--bg-card);
 }
@@ -191,8 +199,15 @@ h1 {
 
 /* Fade In */
 @keyframes fadeIn {
-  from { opacity: 0; transform: translateY(10px); }
-  to { opacity: 1; transform: translateY(0); }
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .animate-fade {
@@ -201,8 +216,15 @@ h1 {
 
 /* Slide Up */
 @keyframes slideUp {
-  from { opacity: 0; transform: translateY(30px); }
-  to { opacity: 1; transform: translateY(0); }
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .animate-slide-up {
@@ -216,9 +238,17 @@ h1 {
 }
 
 @keyframes float {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(10px); }
+
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(10px);
+  }
 }
+
 .card-shadow:hover {
   box-shadow: var(--shadow-glow);
 }
