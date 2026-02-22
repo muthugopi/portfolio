@@ -30,7 +30,7 @@ function SkillCard(props) {
               className="px-[16px] py-[8px] mb-[8px] bg-white/5 border border-[#475569]/30 rounded-md flex items-center gap-2 backdrop-blur-sm"
             >
               <i className="bi bi-circle-fill text-[8px] text-purple-400"></i>
-              <p className="text-gray-300">{item}</p>
+              <p className="text-gray-300 ">{item}</p>
             </div>
           ))}
         </div>

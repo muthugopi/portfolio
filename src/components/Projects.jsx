@@ -15,7 +15,7 @@ function Projects() {
                 <ProjectCard
                     icon="bi-shield-check"
                     iconGradient="from-pink-500 to-purple-500"
-                    title="Authenticarion"
+                    title="Authentication"
                     content="A full-stack MERN application that provides a secure login and registration system, ensuring safe storage and protection of user data."
                     techStack={["React", "Node.js", "MySQL", "JWT"]}
                     projectLink="https://authentication-gray-five.vercel.app"

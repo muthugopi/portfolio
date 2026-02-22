@@ -72,7 +72,7 @@ function ContactSection() {
                             <input
                                 type="text"
                                 name="name"
-                                placeholder="Your Name"
+                                placeholder="Emirates"
                                 value={formData.name}
                                 onChange={handleChange}
                                 className="w-full p-2 sm:p-3 rounded-lg bg-slate-800 border border-slate-700 text-white focus:outline-none focus:ring-2 focus:ring-purple-500"
@@ -82,7 +82,7 @@ function ContactSection() {
                             <input
                                 type="email"
                                 name="email"
-                                placeholder="your@email.com"
+                                placeholder="emirates@gmail.com"
                                 value={formData.email}
                                 onChange={handleChange}
                                 className="w-full p-2 sm:p-3 rounded-lg bg-slate-800 border border-slate-700 text-white focus:outline-none focus:ring-2 focus:ring-purple-500"
@@ -92,7 +92,7 @@ function ContactSection() {
                             <textarea
                                 name="message"
                                 rows="5"
-                                placeholder="Your Message"
+                                placeholder="Message"
                                 value={formData.message}
                                 onChange={handleChange}
                                 className="w-full p-2 sm:p-3 rounded-lg bg-slate-800 border border-slate-700 text-white focus:outline-none focus:ring-2 focus:ring-purple-500"
@@ -126,7 +126,7 @@ function ContactSection() {
                             <div className="space-y-3 text-gray-300">
                                 <p className="flex items-center gap-3">
                                     <i className="bi bi-envelope-fill text-purple-400"></i>
-                                    muthugopi@example.com
+                                    muthugopij@gmail.com
                                 </p>
 
                                 <p className="flex items-center gap-3">
@@ -147,7 +147,7 @@ function ContactSection() {
 
                             <div className="flex flex-col gap-4">
                                 <a
-                                    href="https://linkedin.com/in/muthugopi"
+                                    href="https://www.linkedin.com/in/muthugopi-j-848459371/"
                                     target="_blank"
                                     rel="noopener noreferrer"
                                     className="w-full px-5 py-3 bg-slate-800 
@@ -171,7 +171,7 @@ function ContactSection() {
                                 </a>
 
                                 <a
-                                    href="mailto:muthugopi@example.com"
+                                    href="mailto:muthugopij@gmail.com"
                                     className="w-full px-5 py-3 bg-slate-800 
                                     rounded-lg flex items-center gap-3 text-white
                                     hover:scale-105 transition duration-300"

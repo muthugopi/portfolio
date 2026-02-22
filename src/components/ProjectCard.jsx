@@ -57,7 +57,7 @@ function ProjectCard({
                     disabled
                     className="mt-4 px-3 py-2 sm:px-4 sm:py-2 rounded-lg bg-gray-700 text-gray-400 cursor-not-allowed relative z-10"
                 >
-                    🚧 Deployment in Progress
+                    Deployment in Progress
                 </button>
             )}
             

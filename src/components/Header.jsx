@@ -3,7 +3,7 @@ import Button from "./Button";
 
 function Header() {
   return (
-    <header className="min-h-[70vh] header-bg my-4 sm:my-10 md:my-16 py-8 sm:py-10 flex flex-col items-center justify-center text-center gap-3 sm:gap-4">
+    <header className="min-h-[70vh] header-bg my-[130px] sm:my-10 md:my-[150px] py-8 sm:py-10 flex flex-col items-center justify-center text-center gap-3 sm:gap-4">
       <div className="symbol-rotate text-xl sm:text-2xl">()</div>
 
       <div>
@@ -20,19 +20,27 @@ function Header() {
       </div>
 
       <div className="py-2 sm:py-3 md:py-4">
-        <p className="flex gap-2 sm:gap-3 md:gap-4 justify-center text-md sm:text-lg md:text-xl items-center flex-wrap">
-          <i className="bi bi-code"></i>
-          <span className="hero-skill">MERN Stack Developer</span>
+        <p className="flex flex-col md:flex-row gap-2 md:gap-4 justify-center text-md sm:text-lg md:text-xl items-center">
 
-          <span className="text-[#6366f1]">|</span>
+          <span className="flex items-center gap-2">
+            <i className="bi bi-code-slash"></i>
+            <span className="hero-skill">MERN Stack Developer</span>
+          </span>
 
-          <i className="bi bi-bar-chart-line"></i>
-          <span className="hero-skill">Data Analyst</span>
+          <span className="text-[#6366f1] hidden md:inline">|</span>
 
-          <span className="text-[#6366f1]">|</span>
+          <span className="flex items-center gap-2">
+            <i className="bi bi-bar-chart-line"></i>
+            <span className="hero-skill">Data Analyst</span>
+          </span>
 
-          <i className="bi bi-database"></i>
-          <span className="hero-skill">SQL Developer</span>
+          <span className="text-[#6366f1] hidden md:inline">|</span>
+
+          <span className="flex items-center gap-2">
+            <i className="bi bi-database"></i>
+            <span className="hero-skill">SQL Developer</span>
+          </span>
+
         </p>
       </div>
 
