@@ -43,35 +43,31 @@ function ContactSection() {
     };
 
     return (
-        <section className="w-full min-h-screen py-20 px-6">
+        <section className="w-full min-h-min py-12 sm:py-16 px-4 sm:px-6">
 
-            <div className="flex flex-col mb-16 items-center">
-                <h1 className="text-4xl sm:text-5xl md:text-[60px] font-bold 
-                bg-gradient-to-r from-indigo-400 via-indigo-500 to-purple-500 
-                bg-clip-text text-transparent">
+            <div className="flex flex-col mb-12 items-center">
+                <h1 className="text-3xl sm:text-4xl md:text-[48px] font-bold bg-gradient-to-r from-indigo-400 via-indigo-500 to-purple-500 bg-clip-text text-transparent">
                     Get In Touch
                 </h1>
 
-                <hr className="bg-gradient-to-r from-indigo-400 via-indigo-500 
-                to-purple-500 h-1 w-[150px] rounded mt-4" />
+                <hr className="bg-gradient-to-r from-indigo-400 via-indigo-500 to-purple-500 h-1 w-[120px] sm:w-[150px] rounded mt-3" />
 
-                <p className="text-[18px] text-gray-400 text-center mt-6">
+                <p className="text-[16px] sm:text-[18px] text-gray-400 text-center mt-4">
                     Let's discuss your next project or opportunity
                 </p>
             </div>
 
-            <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-10">
+            <div className="max-w-4xl mx-auto grid md:grid-cols-2 gap-8">
 
                 <div className="relative group rounded-2xl">
 
-                    <div className="relative bg-slate-900/80 backdrop-blur-lg 
-                    p-8 rounded-2xl border border-slate-700 shadow-lg">
+                    <div className="relative bg-slate-900/80 backdrop-blur-lg p-6 sm:p-8 rounded-2xl border border-slate-700 shadow-lg">
 
-                        <h2 className="text-3xl font-bold text-white mb-6">
+                        <h2 className="text-2xl sm:text-3xl font-bold text-white mb-4">
                             Contact Me
                         </h2>
 
-                        <form className="space-y-5" onSubmit={handleSubmit}>
+                        <form className="space-y-4" onSubmit={handleSubmit}>
 
                             <input
                                 type="text"
@@ -79,9 +75,7 @@ function ContactSection() {
                                 placeholder="Your Name"
                                 value={formData.name}
                                 onChange={handleChange}
-                                className="w-full p-3 rounded-lg bg-slate-800 
-                                border border-slate-700 text-white 
-                                focus:outline-none focus:ring-2 focus:ring-purple-500"
+                                className="w-full p-2 sm:p-3 rounded-lg bg-slate-800 border border-slate-700 text-white focus:outline-none focus:ring-2 focus:ring-purple-500"
                                 required
                             />
 
@@ -91,9 +85,7 @@ function ContactSection() {
                                 placeholder="your@email.com"
                                 value={formData.email}
                                 onChange={handleChange}
-                                className="w-full p-3 rounded-lg bg-slate-800 
-                                border border-slate-700 text-white 
-                                focus:outline-none focus:ring-2 focus:ring-purple-500"
+                                className="w-full p-2 sm:p-3 rounded-lg bg-slate-800 border border-slate-700 text-white focus:outline-none focus:ring-2 focus:ring-purple-500"
                                 required
                             />
 
@@ -103,17 +95,13 @@ function ContactSection() {
                                 placeholder="Your Message"
                                 value={formData.message}
                                 onChange={handleChange}
-                                className="w-full p-3 rounded-lg bg-slate-800 
-                                border border-slate-700 text-white 
-                                focus:outline-none focus:ring-2 focus:ring-purple-500"
+                                className="w-full p-2 sm:p-3 rounded-lg bg-slate-800 border border-slate-700 text-white focus:outline-none focus:ring-2 focus:ring-purple-500"
                                 required
                             ></textarea>
 
                             <button
                                 type="submit"
-                                className="w-full py-3 rounded-lg font-semibold text-white
-                                bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500
-                                hover:scale-105 transition duration-300"
+                                className="w-full py-3 rounded-lg font-semibold text-white bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 hover:scale-105 transition duration-300"
                             >
                                 Send Message
                             </button>

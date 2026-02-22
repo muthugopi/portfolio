@@ -5,13 +5,13 @@ function Projects() {
     return (
         <section >
             <div className='flex justify-even flex-col mb-[64px] items-center'>
-                <h1 className='text-4xl sm:text-5xl md:text-[60px] font-bold bg-gradient-to-r from-indigo-400 via-indigo-500 to-purple-500 bg-clip-text text-transparent'>
-                    Featured Projects
-                </h1>
-                <hr className='bg-gradient-to-r from-indigo-400 via-indigo-500 to-purple-500 h-1 w-[120px] sm:w-[150px] rounded mt-4' />
-                <p className='text-[18px] text-gray-400  text-center mt-6' >Some of my recent works and side projects</p>
+                        <h1 className='text-3xl sm:text-4xl md:text-[48px] font-bold bg-gradient-to-r from-indigo-400 via-indigo-500 to-purple-500 bg-clip-text text-transparent'>
+                            Featured Projects
+                        </h1>
+                        <hr className='bg-gradient-to-r from-indigo-400 via-indigo-500 to-purple-500 h-1 w-[100px] sm:w-[140px] rounded mt-3' />
+                        <p className='text-[16px] sm:text-[18px] text-gray-400 text-center mt-4'>Some of my recent works and side projects</p>
             </div>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 w-full max-w-7xl mx-auto">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 w-full max-w-6xl mx-auto">
                 <ProjectCard
                     icon="bi-shield-check"
                     iconGradient="from-pink-500 to-purple-500"

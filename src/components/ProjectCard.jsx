@@ -18,23 +18,23 @@ function ProjectCard({
             <span className="absolute bottom-0 right-0 w-40 h-40 bg-purple-500/20 rounded-full blur-3xl"></span>
 
             <div className="relative z-10">
-                <div className={`w-fit p-4 rounded-xl bg-gradient-to-r ${iconGradient} text-white shadow-lg`}>
-                    <i className={`bi ${icon} text-2xl`}></i>
+                <div className={`w-fit p-3 sm:p-4 rounded-xl bg-gradient-to-r ${iconGradient} text-white shadow-lg`}>
+                    <i className={`bi ${icon} text-xl sm:text-2xl`}></i>
                 </div>
             </div>
 
-            <h2 className="text-[24px] font-semibold text-gray-200 mt-4 relative z-10">
+            <h2 className="text-[20px] sm:text-[22px] font-semibold text-gray-200 mt-3 relative z-10">
                 {title}
             </h2>
 
-            <p className="text-gray-400 mt-3 text-[16px] leading-relaxed relative z-10">
+            <p className="text-gray-400 mt-2 text-[14px] sm:text-[15px] leading-relaxed relative z-10">
                 {content}
             </p>
-            <div className="flex flex-wrap gap-2 mt-4 relative z-10">
+            <div className="flex flex-wrap gap-2 mt-3 relative z-10">
                 {techStack?.map((tech, index) => (
                     <span
                         key={index}
-                        className="px-3 py-1 text-[12px] bg-white/5 border border-[#475569]/30 rounded-md text-gray-300"
+                        className="px-2 py-1 text-[11px] sm:text-[12px] bg-white/5 border border-[#475569]/30 rounded-md text-gray-300"
                     >
                         {tech}
                     </span>
@@ -48,14 +48,14 @@ function ProjectCard({
                     href={projectLink}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className={`mt-6 inline-block text-center px-4 py-2 rounded-lg bg-gradient-to-r ${iconGradient} text-white font-medium hover:opacity-90 transition relative z-10`}
+                    className={`mt-4 inline-block text-center px-3 py-2 sm:px-4 sm:py-2 rounded-lg bg-gradient-to-r ${iconGradient} text-white font-medium hover:opacity-90 transition relative z-10`}
                 >
                     Live Demo →
                 </a>
             ) : (
                 <button
                     disabled
-                    className="mt-6 px-4 py-2 rounded-lg bg-gray-700 text-gray-400 cursor-not-allowed relative z-10"
+                    className="mt-4 px-3 py-2 sm:px-4 sm:py-2 rounded-lg bg-gray-700 text-gray-400 cursor-not-allowed relative z-10"
                 >
                     🚧 Deployment in Progress
                 </button>
