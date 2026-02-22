@@ -43,7 +43,7 @@ function ContactSection() {
     };
 
     return (
-        <section className="w-full min-h-min py-12 sm:py-16 px-4 sm:px-6">
+        <section id="contact" className="w-full min-h-min py-12 sm:py-16 px-4 sm:px-6">
 
             <div className="flex flex-col mb-12 items-center">
                 <h1 className="text-3xl sm:text-4xl md:text-[48px] font-bold bg-gradient-to-r from-indigo-400 via-indigo-500 to-purple-500 bg-clip-text text-transparent">

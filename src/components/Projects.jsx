@@ -3,7 +3,7 @@ import ProjectCard from './ProjectCard'
 
 function Projects() {
     return (
-        <section >
+        <section id='project'>
             <div className='flex justify-even flex-col mb-[64px] items-center'>
                         <h1 className='text-3xl sm:text-4xl md:text-[48px] font-bold bg-gradient-to-r from-indigo-400 via-indigo-500 to-purple-500 bg-clip-text text-transparent'>
                             Featured Projects

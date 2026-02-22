@@ -51,9 +51,9 @@ function Header() {
       </div>
 
       <div className="flex gap-3 sm:gap-6 md:gap-8 mt-5 sm:mt-6 md:mt-8">
-        <Button className="button-comp px-4 sm:px-6 md:px-10" content="View Project" />
+        <Button className="button-comp px-4 sm:px-6 md:px-10" onClick={() => document.getElementById('project').scrollIntoView({ behavior: 'smooth' })} content="View Project" />
 
-        <button className="hero-con button-comp text-white px-4 sm:px-6 md:px-10 py-2 sm:py-3 font-semibold rounded-xl hover:shadow-[var(--btn-secondary-outline-hover-bg)] transition duration-300">
+        <button onClick={() => document.getElementById('contact').scrollIntoView({ behavior: 'smooth' })} className="hero-con button-comp text-white px-4 sm:px-6 md:px-10 py-2 sm:py-3 font-semibold rounded-xl hover:shadow-[var(--btn-secondary-outline-hover-bg)] transition duration-300">
           Contact
         </button>
       </div>
