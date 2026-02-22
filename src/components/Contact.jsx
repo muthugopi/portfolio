@@ -57,7 +57,7 @@ function ContactSection() {
                 </p>
             </div>
 
-            <div className="max-w-4xl mx-auto grid md:grid-cols-2 gap-8">
+            <div className="max-w-4xl mx-auto grid  px-4 sm:px-6 md:grid-cols-2 gap-8">
 
                 <div className="relative group rounded-2xl">
 

@@ -12,7 +12,7 @@ function Skills() {
                 <p className='text-[16px] sm:text-[18px] text-gray-400 text-center mt-4'>Technologies and tools I work with</p>
             </div>
             
-            <div className="skills grid grid-cols-1 md:grid-cols-3 mx-auto max-w-7xl gap-6 justify-items-center">
+            <div className="skills grid grid-cols-1 md:grid-cols-3 mx-auto max-w-7xl gap-6  justify-items-center px-4 sm:px-6">
                 <SkillCard icon="bi-code-slash"  title="Frontend Development" gradient='from-pink-500 to-purple-500'  tech={["React", "Tailwind", "JavaScript"  ]}/>
                 <SkillCard icon="bi-gear "  title="Backend Development" gradient='from-cyan-500 to-blue-500'  tech={["Node.js", "Express", "JWT"]}/>
                 <SkillCard icon="bi-database-check "  title="Database" gradient='from-teal-500 to-green-500'  tech={["MySQL", "MongoDB", "SQLlite"]}/>

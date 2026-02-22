@@ -11,7 +11,7 @@ function Projects() {
                         <hr className='bg-gradient-to-r from-indigo-400 via-indigo-500 to-purple-500 h-1 w-[100px] sm:w-[140px] rounded mt-3' />
                         <p className='text-[16px] sm:text-[18px] text-gray-400 text-center mt-4'>Some of my recent works and side projects</p>
             </div>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 w-full max-w-6xl mx-auto">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 w-full max-w-6xl  px-4 sm:px-6 mx-auto">
                 <ProjectCard
                     icon="bi-shield-check"
                     iconGradient="from-pink-500 to-purple-500"
