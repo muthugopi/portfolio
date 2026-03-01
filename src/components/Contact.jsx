@@ -19,7 +19,7 @@ function ContactSection() {
 
         try {
             const response = await fetch(
-                "https://authentication-u5oq.onrender.com/api/portfolio/message",
+                "https://formhanlder.onrender.com/api/message",
                 {
                     method: "POST",
                     headers: {
