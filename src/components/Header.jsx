@@ -2,6 +2,29 @@ import React from "react";
 import Button from "./Button";
 
 function Header() {
+
+  async function sendEvent() {
+  try {
+    const response = await fetch("https://formhanlder.onrender.com/api/event", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify({
+        website: "Muthugopi's Portfolio",
+        event: "visit"
+      })
+    });
+
+    const data = await response.json();
+    console.log("Response:", data);
+  } catch (err) {
+    console.error("Error sending event:", err);
+  }
+}
+
+  sendEvent();
+
   return (
     <header className="min-h-[70vh] header-bg my-[130px] sm:my-10 md:my-[150px] py-8 sm:py-10 flex flex-col items-center justify-center text-center gap-3 sm:gap-4">
       <div className="symbol-rotate text-xl sm:text-2xl">()</div>
