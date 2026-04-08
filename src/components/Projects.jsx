@@ -5,11 +5,11 @@ function Projects() {
     return (
         <section id='project'>
             <div className='flex justify-even flex-col mb-[64px] items-center'>
-                        <h1 className='text-3xl sm:text-4xl md:text-[48px] font-bold bg-gradient-to-r from-indigo-400 via-indigo-500 to-purple-500 bg-clip-text text-transparent'>
-                            Featured Projects
-                        </h1>
-                        <hr className='bg-gradient-to-r from-indigo-400 via-indigo-500 to-purple-500 h-1 w-[100px] sm:w-[140px] rounded mt-3' />
-                        <p className='text-[16px] sm:text-[18px] text-gray-400 text-center mt-4'>Some of my recent works and side projects</p>
+                <h1 className='text-3xl sm:text-4xl md:text-[48px] font-bold bg-gradient-to-r from-indigo-400 via-indigo-500 to-purple-500 bg-clip-text text-transparent'>
+                    Featured Projects
+                </h1>
+                <hr className='bg-gradient-to-r from-indigo-400 via-indigo-500 to-purple-500 h-1 w-[100px] sm:w-[140px] rounded mt-3' />
+                <p className='text-[16px] sm:text-[18px] text-gray-400 text-center mt-4'>Some of my recent works and side projects</p>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 w-full max-w-6xl  px-4 sm:px-6 mx-auto">
                 <ProjectCard
@@ -29,11 +29,13 @@ function Projects() {
                     techStack={["Python ", "Pandas", "Numpy", "matplotlib", "React"]}
                 />
                 <ProjectCard
-                    icon="bi-code-slash"
-                    iconGradient="from-green-500 to-teal-500"
-                    title="REST API-Service"
-                    content="A full-stack MERN e-commerce platform with authentication, cart system, and admin dashboard."
-                    techStack={["React", "Node.js", "MongoDB", "JWT"]}
+                    icon="bi-people"
+                    iconGradient="from-purple-500 to-pink-500"
+                    title="Emix Community Platform"
+                    content="A modern community platform where users can connect, share ideas, and collaborate. Features include user interaction, content sharing, and a clean responsive UI built for seamless user experience."
+                    projectLink="https://emix-community.vercel.app"
+                    active='true'
+                    techStack={["React", "Tailwind CSS", "Express", "MySQL", "REST API"]}
                 />
             </div>
             <div className="flex justify-center my-20">
