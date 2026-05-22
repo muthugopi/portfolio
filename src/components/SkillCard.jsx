@@ -8,7 +8,7 @@ function SkillCard(props) {
     group-hover:opacity-60 blur-3xl transition duration-500 
     bg-gradient-to-r ${props.gradient} -z-10`}
       ></span>
-      <div className="w-[400px] border bg-slate-900/70 border-[#475569]/30 p-6 rounded-2xl card-shadow relative animation duration-300 overflow-hidden">
+      <div className="w-full max-w-[520px] border bg-slate-900/70 border-[#475569]/30 p-6 rounded-2xl card-shadow relative animation duration-300 overflow-hidden">
 
         {/* Modern Bright Circles (Like Gradient Vibe) */}
         <span className="absolute -top-10 -left-10 w-40 h-40 bg-indigo-500/20 rounded-full blur-3xl"></span>
@@ -23,14 +23,14 @@ function SkillCard(props) {
           <h1 className="text-[20px] font-semibold text-gray-200">{props.title}</h1>
         </div>
 
-        <div className="tech mt-4 py-2 mb-2 relative z-10">
+        <div className="tech mt-4 py-2 mb-2 relative z-10 flex flex-col gap-2">
           {props.tech?.map((item, index) => (
             <div
               key={index}
-              className="px-[16px] py-[8px] mb-[8px] bg-white/5 border border-[#475569]/30 rounded-md flex items-center gap-2 backdrop-blur-sm"
+              className="w-full px-4 py-3 bg-white/5 border border-[#475569]/30 rounded-md flex items-center gap-3 backdrop-blur-sm"
             >
               <i className="bi bi-circle-fill text-[8px] text-purple-400"></i>
-              <p className="text-gray-300 ">{item}</p>
+              <p className="text-gray-300 text-[14px]">{item}</p>
             </div>
           ))}
         </div>
