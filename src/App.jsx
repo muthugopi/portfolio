@@ -45,30 +45,50 @@ function CursorGlow() {
 }
 
 function Loader() {
+  const segments = Array.from({ length: 5 }, (_, index) => index);
+
   return (
     <Motion.div
-      className="fixed inset-0 z-50 grid place-items-center bg-[#03050a]"
+      className="fixed inset-0 z-50 grid place-items-center bg-[#f4f0e8] text-[#211f1b]"
       initial={{ opacity: 1 }}
-      exit={{ opacity: 0, transition: { duration: 0.6, ease: 'easeInOut' } }}
+      exit={{ opacity: 0, filter: 'blur(10px)', transition: { duration: 0.55, ease: 'easeInOut' } }}
     >
-      <div className="relative w-[min(86vw,28rem)] overflow-hidden rounded-[2rem] border border-white/10 bg-white/[0.04] p-8 text-center shadow-panel backdrop-blur-2xl">
-        <div className="absolute inset-x-8 top-0 h-px bg-gradient-to-r from-transparent via-cyan-300 to-transparent" />
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_34%,rgba(255,255,255,0.9),transparent_34%)]" />
+      <div className="relative w-[min(86vw,25rem)] text-center">
         <Motion.div
-          className="mx-auto grid h-24 w-24 place-items-center rounded-3xl border border-white/10 bg-black/30 text-3xl font-black text-white"
-          animate={{ rotate: [0, 4, -4, 0], scale: [1, 1.04, 1] }}
-          transition={{ duration: 1.4, repeat: Infinity, ease: 'easeInOut' }}
+          className="mx-auto grid h-16 w-16 place-items-center rounded-2xl border border-[#211f1b]/10 bg-[#211f1b] text-xl font-black tracking-[-0.05em] text-[#f4f0e8] shadow-[0_20px_60px_rgba(33,31,27,0.12)]"
+          initial={{ opacity: 0, y: 10, scale: 0.96 }}
+          animate={{ opacity: 1, y: 0, scale: 1 }}
+          transition={{ duration: 0.5, ease: 'easeOut' }}
         >
           MJ
         </Motion.div>
-        <p className="mt-7 text-xs font-semibold uppercase tracking-[0.42em] text-cyan-200">Initializing interface</p>
-        <div className="mt-5 h-1.5 overflow-hidden rounded-full bg-white/10">
-          <Motion.div
-            className="h-full rounded-full bg-gradient-to-r from-cyan-300 via-violet-400 to-fuchsia-400"
-            initial={{ width: '0%' }}
-            animate={{ width: '100%' }}
-            transition={{ duration: 1.15, ease: 'easeInOut' }}
-          />
+        <Motion.div
+          initial={{ opacity: 0, y: 8 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5, delay: 0.12, ease: 'easeOut' }}
+        >
+          <p className="mt-6 font-display text-2xl font-semibold tracking-[-0.04em]">Preparing your experience</p>
+          <p className="mt-2 text-sm leading-6 text-[#6f675d]">Loading interface, motion, and project details.</p>
+        </Motion.div>
+
+        <div className="mx-auto mt-8 flex max-w-44 items-center justify-center gap-2">
+          {segments.map((segment) => (
+            <Motion.span
+              key={segment}
+              className="h-1.5 flex-1 rounded-full bg-[#211f1b]/20"
+              animate={{ opacity: [0.25, 1, 0.25], scaleX: [0.75, 1, 0.75] }}
+              transition={{
+                duration: 1.15,
+                repeat: Infinity,
+                ease: 'easeInOut',
+                delay: segment * 0.12,
+              }}
+            />
+          ))}
         </div>
+
+        <p className="mt-6 text-[11px] font-bold uppercase tracking-[0.32em] text-[#8b8174]">Portfolio 2026</p>
       </div>
     </Motion.div>
   );
