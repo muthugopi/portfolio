@@ -9,19 +9,22 @@ const principles = [
 
 const timeline = [
   {
-    period: '2026 focus',
-    title: 'Premium frontend products',
-    detail: 'Designing dark-first React experiences with bento layouts, glass surfaces, and polished motion.',
+    period: 'May 2026',
+    title: 'Data Structures & Systems Development',
+    detail:
+      'Designed and implemented efficient algorithms for CLI applications and 2D graphics systems with a strong focus on performance optimization and scalable architecture.',
   },
   {
-    period: '2025',
-    title: 'Full-stack web systems',
-    detail: 'Building authentication, community, and data-backed products with clean API flows.',
+    period: 'December 2025',
+    title: 'Full-Stack Web Systems',
+    detail:
+      'Developed and managed scalable full-stack web applications supporting 100+ user accounts with secure authentication and optimized system reliability.',
   },
   {
-    period: '2024',
-    title: 'Data and algorithms',
-    detail: 'Sharpening problem solving through SQL workflows, C++ fundamentals, and automation.',
+    period: 'May 2025',
+    title: 'Frontend Developer',
+    detail:
+      'Built responsive, mobile-first web interfaces with modern UI/UX principles, ensuring performance, accessibility, and cross-device compatibility.',
   },
 ];
 

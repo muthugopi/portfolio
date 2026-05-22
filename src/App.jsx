@@ -45,50 +45,62 @@ function CursorGlow() {
 }
 
 function Loader() {
-  const segments = Array.from({ length: 5 }, (_, index) => index);
+  const labels = ['Loading interface', 'Preparing motion', 'Almost ready'];
+  const [labelIndex, setLabelIndex] = useState(0);
+
+  useEffect(() => {
+    const id = setInterval(() => {
+      setLabelIndex((i) => (i + 1) % labels.length);
+    }, 2000);
+    return () => clearInterval(id);
+  }, []);
 
   return (
     <Motion.div
-      className="fixed inset-0 z-50 grid place-items-center bg-[#f4f0e8] text-[#211f1b]"
+      className="fixed inset-0 z-50 flex items-center justify-center bg-[#03050a]"
       initial={{ opacity: 1 }}
-      exit={{ opacity: 0, filter: 'blur(10px)', transition: { duration: 0.55, ease: 'easeInOut' } }}
+      exit={{ opacity: 0, transition: { duration: 0.4, ease: 'easeInOut' } }}
     >
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_34%,rgba(255,255,255,0.9),transparent_34%)]" />
-      <div className="relative w-[min(86vw,25rem)] text-center">
+      <div className="flex w-52 flex-col items-center">
+
+        {/* Monogram */}
         <Motion.div
-          className="mx-auto grid h-16 w-16 place-items-center rounded-2xl border border-[#211f1b]/10 bg-[#211f1b] text-xl font-black tracking-[-0.05em] text-[#f4f0e8] shadow-[0_20px_60px_rgba(33,31,27,0.12)]"
-          initial={{ opacity: 0, y: 10, scale: 0.96 }}
-          animate={{ opacity: 1, y: 0, scale: 1 }}
-          transition={{ duration: 0.5, ease: 'easeOut' }}
+          className="mb-8 flex h-10 w-10 items-center justify-center rounded-[10px] border border-white/8 bg-[#0e1623] text-[13px] font-semibold tracking-tight text-white/90"
+          initial={{ opacity: 0, y: 6 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5 }}
         >
           MJ
         </Motion.div>
+
+        {/* Progress line */}
         <Motion.div
-          initial={{ opacity: 0, y: 8 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 0.12, ease: 'easeOut' }}
+          className="mb-5 h-px w-full overflow-hidden rounded-px bg-white/7"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.5, delay: 0.1 }}
         >
-          <p className="mt-6 font-display text-2xl font-semibold tracking-[-0.04em]">Preparing your experience</p>
-          <p className="mt-2 text-sm leading-6 text-[#6f675d]">Loading interface, motion, and project details.</p>
+          <Motion.div
+            className="h-full bg-white/50"
+            animate={{ marginLeft: ['0%', '20%', '100%'], width: ['0%', '60%', '0%'] }}
+            transition={{ duration: 2, ease: [0.4, 0, 0.2, 1], repeat: Infinity }}
+          />
         </Motion.div>
 
-        <div className="mx-auto mt-8 flex max-w-44 items-center justify-center gap-2">
-          {segments.map((segment) => (
-            <Motion.span
-              key={segment}
-              className="h-1.5 flex-1 rounded-full bg-[#211f1b]/20"
-              animate={{ opacity: [0.25, 1, 0.25], scaleX: [0.75, 1, 0.75] }}
-              transition={{
-                duration: 1.15,
-                repeat: Infinity,
-                ease: 'easeInOut',
-                delay: segment * 0.12,
-              }}
-            />
-          ))}
-        </div>
+        {/* Label */}
+        <AnimatePresence mode="wait">
+          <Motion.p
+            key={labelIndex}
+            className="text-[11px] uppercase tracking-[0.12em] text-white/22"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.3 }}
+          >
+            {labels[labelIndex]}
+          </Motion.p>
+        </AnimatePresence>
 
-        <p className="mt-6 text-[11px] font-bold uppercase tracking-[0.32em] text-[#8b8174]">Portfolio 2026</p>
       </div>
     </Motion.div>
   );

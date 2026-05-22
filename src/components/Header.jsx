@@ -45,7 +45,7 @@ function Header() {
       >
         <div className="flex items-center justify-between gap-4 text-sm">
           <a href="#home" className="rounded-full px-2 font-black uppercase tracking-[0.28em] text-white focus-ring">
-            Muthugopi
+            Muthugopi J
           </a>
           <div className="hidden items-center gap-1 rounded-full border border-white/10 bg-white/[0.03] p-1 md:flex">
             {navItems.map((item) => (
@@ -133,7 +133,7 @@ function Header() {
                   className="relative mx-auto h-[17rem] w-full object-contain object-bottom sm:h-[20rem] lg:h-[23rem]"
                 />
                 <div className="absolute left-4 top-4 rounded-full border border-white/10 bg-black/35 px-3 py-1.5 text-xs font-bold uppercase tracking-[0.22em] text-slate-200 backdrop-blur-xl">
-                  Developer
+                  Engineer
                 </div>
                 <div className="absolute bottom-4 left-4 right-4 grid grid-cols-2 gap-3">
                   <div className="rounded-2xl border border-white/10 bg-black/45 p-3 backdrop-blur-xl">
