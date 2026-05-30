@@ -3,7 +3,7 @@ import SectionHeading from './SectionHeading';
 
 const projects = [
   {
-    title: 'Authentication Suite',
+    title: 'Authentication Site',
     label: 'Secure identity product',
     description: 'A polished MERN authentication platform with JWT flows, account states, responsive screens, and trustworthy product UX.',
     tags: ['React', 'Node.js', 'MySQL', 'JWT'],

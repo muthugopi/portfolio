@@ -4,7 +4,7 @@ function Footer() {
       <div className="mx-auto flex max-w-7xl flex-col gap-6 text-sm text-slate-500 md:flex-row md:items-center md:justify-between">
         <div>
           <p className="font-display text-2xl font-black tracking-[-0.05em] text-white">Muthugopi J</p>
-          <p className="mt-2">Electronics and Communication ENgineering</p>
+          <p className="mt-2">Electronics and Communication Engineering</p>
         </div>
         <div className="flex flex-wrap gap-4 font-bold">
           <a href="#home" className="transition hover:text-white focus-ring">Home</a>

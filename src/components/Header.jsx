@@ -130,7 +130,7 @@ function Header() {
                 <img
                   src={developerImage}
                   alt="Muthugopi J developer portrait"
-                  className="relative mx-auto h-[17rem] w-full object-contain object-bottom sm:h-[20rem] lg:h-[23rem]"
+                  className="relative mx-auto select-none pointer-events-none  h-[17rem] w-full object-contain object-bottom sm:h-[20rem] lg:h-[23rem]"
                 />
                 <div className="absolute left-4 top-4 rounded-full border border-white/10 bg-black/35 px-3 py-1.5 text-xs font-bold uppercase tracking-[0.22em] text-slate-200 backdrop-blur-xl">
                   Engineer
