@@ -1,4 +1,5 @@
 import { motion as Motion } from 'framer-motion';
+import { SectionShell } from './MotionPrimitives';
 import SectionHeading from './SectionHeading';
 
 const principles = [
@@ -30,7 +31,7 @@ const timeline = [
 
 function About() {
   return (
-    <section id="about" className="relative isolate px-4 py-24 sm:px-6 lg:px-8">
+    <SectionShell id="about">
       <div className="mx-auto max-w-7xl">
         <SectionHeading
           align="left"
@@ -95,7 +96,7 @@ function About() {
           </div>
         </div>
       </div>
-    </section>
+    </SectionShell>
   );
 }
 

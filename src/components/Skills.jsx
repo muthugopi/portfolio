@@ -1,4 +1,6 @@
 import { motion as Motion } from 'framer-motion';
+import { SectionShell } from './MotionPrimitives';
+import { staggerGroup } from './motionVariants';
 import SectionHeading from './SectionHeading';
 
 const skillGroups = [
@@ -38,7 +40,7 @@ const skillGroups = [
 
 function Skills() {
   return (
-    <section id="skills" className="relative isolate px-4 py-24 sm:px-6 lg:px-8">
+    <SectionShell id="skills">
       <div className="mx-auto max-w-7xl">
         <SectionHeading
           eyebrow="Capabilities"
@@ -46,7 +48,7 @@ function Skills() {
           description="No fake skill percentages. Just a clean view of the areas I work in, the tools I use, and the product outcomes I focus on."
         />
 
-        <div className="grid auto-rows-fr gap-5 md:grid-cols-2 lg:grid-cols-3">
+        <Motion.div className="grid auto-rows-fr gap-5 md:grid-cols-2 lg:grid-cols-3" variants={staggerGroup}>
           {skillGroups.map((skill, index) => (
             <Motion.article
               key={skill.title}
@@ -103,7 +105,7 @@ function Skills() {
               </div>
             </Motion.article>
           ))}
-        </div>
+        </Motion.div>
 
         <Motion.div
           className="mt-6 overflow-hidden rounded-[2rem] border border-white/10 bg-white/[0.04] p-6 backdrop-blur-2xl"
@@ -122,7 +124,7 @@ function Skills() {
           </div>
         </Motion.div>
       </div>
-    </section>
+    </SectionShell>
   );
 }
 

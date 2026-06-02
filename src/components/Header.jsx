@@ -1,5 +1,6 @@
 import { motion as Motion, useScroll, useTransform } from 'framer-motion';
 import developerImage from '../assets/developer.png';
+import { AnimatedCounter, MagneticButton } from './MotionPrimitives';
 
 const navItems = [
   { label: 'About', href: '#about' },
@@ -13,22 +14,6 @@ const socials = [
   { label: 'IN', href: 'https://www.linkedin.com/in/muthugopi-j-848459371/' },
   { label: 'ME', href: 'mailto:muthugopij@gmail.com' },
 ];
-
-function MagneticLink({ href, children, variant = 'primary' }) {
-  const base =
-    'group relative inline-flex min-h-12 items-center justify-center overflow-hidden rounded-full px-6 py-3 text-sm font-bold transition duration-300 focus-ring';
-  const styles =
-    variant === 'primary'
-      ? 'bg-white text-slate-950 shadow-[0_0_36px_rgba(103,232,249,0.25)] hover:-translate-y-1'
-      : 'border border-white/15 bg-white/[0.04] text-white backdrop-blur-xl hover:-translate-y-1 hover:border-cyan-300/40';
-
-  return (
-    <Motion.a href={href} className={`${base} ${styles}`} whileHover={{ scale: 1.03 }} whileTap={{ scale: 0.98 }}>
-      <span className="absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-cyan-200/30 to-transparent transition duration-700 group-hover:translate-x-full" />
-      <span className="relative">{children}</span>
-    </Motion.a>
-  );
-}
 
 function Header() {
   const { scrollYProgress } = useScroll();
@@ -112,8 +97,12 @@ function Header() {
             </div>
 
             <div className="mt-10 flex flex-col gap-3 sm:flex-row">
-              <MagneticLink href="#projects">View selected work</MagneticLink>
-              <MagneticLink href="#contact" variant="secondary">Start a project</MagneticLink>
+              <MagneticButton href="#projects" className="bg-white text-slate-950 shadow-[0_0_36px_rgba(103,232,249,0.25)] hover:-translate-y-1">
+                View selected work
+              </MagneticButton>
+              <MagneticButton href="#contact" className="border border-white/15 bg-white/[0.04] text-white backdrop-blur-xl hover:-translate-y-1 hover:border-cyan-300/40">
+                Start a project
+              </MagneticButton>
             </div>
           </Motion.div>
 
@@ -137,11 +126,15 @@ function Header() {
                 </div>
                 <div className="absolute bottom-4 left-4 right-4 grid grid-cols-2 gap-3">
                   <div className="rounded-2xl border border-white/10 bg-black/45 p-3 backdrop-blur-xl">
-                    <p className="text-2xl font-black text-white">7+</p>
+                    <p className="text-2xl font-black text-white">
+                      <AnimatedCounter value={7} suffix="+" />
+                    </p>
                     <p className="mt-1 text-xs text-slate-300">React builds</p>
                   </div>
                   <div className="rounded-2xl border border-white/10 bg-black/45 p-3 backdrop-blur-xl">
-                    <p className="text-2xl font-black text-white">4</p>
+                    <p className="text-2xl font-black text-white">
+                      <AnimatedCounter value={4} />
+                    </p>
                     <p className="mt-1 text-xs text-slate-300">Projects</p>
                   </div>
                 </div>

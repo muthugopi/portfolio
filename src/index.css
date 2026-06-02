@@ -67,6 +67,12 @@ a {
   box-shadow: 0 24px 80px rgba(0, 0, 0, 0.36), inset 0 1px 0 rgba(255, 255, 255, 0.08);
   backdrop-filter: blur(22px);
   -webkit-backdrop-filter: blur(22px);
+  transition: border-color 300ms ease, background 300ms ease, box-shadow 300ms ease, transform 300ms ease;
+}
+
+.glass-panel:hover {
+  border-color: rgba(103, 232, 249, 0.24);
+  box-shadow: 0 28px 96px rgba(0, 0, 0, 0.42), 0 0 42px rgba(103, 232, 249, 0.08), inset 0 1px 0 rgba(255, 255, 255, 0.1);
 }
 
 .focus-ring:focus-visible {
@@ -80,6 +86,75 @@ a {
   border-radius: 9999px;
   background: linear-gradient(180deg, #67e8f9, #a78bfa);
   box-shadow: 0 0 26px rgba(103, 232, 249, 0.55);
+}
+
+.section-transition::before {
+  content: '';
+  position: absolute;
+  inset: 0 auto auto 50%;
+  width: min(86vw, 72rem);
+  height: 1px;
+  transform: translateX(-50%);
+  background: linear-gradient(90deg, transparent, rgba(103, 232, 249, 0.18), rgba(217, 70, 239, 0.14), transparent);
+  opacity: 0.8;
+}
+
+.section-orb {
+  pointer-events: none;
+  position: absolute;
+  z-index: -1;
+  border-radius: 9999px;
+  filter: blur(70px);
+  opacity: 0.14;
+}
+
+.section-orb-a {
+  left: max(2rem, 8vw);
+  top: 12%;
+  width: 14rem;
+  height: 14rem;
+  background: #22d3ee;
+}
+
+.section-orb-b {
+  right: max(2rem, 9vw);
+  bottom: 10%;
+  width: 16rem;
+  height: 16rem;
+  background: #d946ef;
+}
+
+.particle-dot {
+  position: absolute;
+  width: 3px;
+  height: 3px;
+  border-radius: 9999px;
+  background: rgba(186, 230, 253, 0.44);
+  box-shadow: 0 0 16px rgba(103, 232, 249, 0.5);
+  animation: particleDrift 12s ease-in-out infinite;
+}
+
+.floating-tech {
+  position: absolute;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 9999px;
+  padding: 0.45rem 0.8rem;
+  background: rgba(255, 255, 255, 0.035);
+  color: rgba(226, 232, 240, 0.7);
+  font-size: 0.72rem;
+  font-weight: 900;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  backdrop-filter: blur(18px);
+}
+
+.magnetic-button {
+  will-change: transform;
+}
+
+a,
+button {
+  -webkit-tap-highlight-color: transparent;
 }
 
 @keyframes scanline {
@@ -97,6 +172,21 @@ a {
   }
   100% {
     transform: translateX(-50%);
+  }
+}
+
+@keyframes particleDrift {
+  0% {
+    transform: translate3d(0, 0, 0) scale(1);
+    opacity: 0.18;
+  }
+  50% {
+    transform: translate3d(18px, -28px, 0) scale(1.35);
+    opacity: 0.58;
+  }
+  100% {
+    transform: translate3d(0, 0, 0) scale(1);
+    opacity: 0.18;
   }
 }
 

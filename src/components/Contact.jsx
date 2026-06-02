@@ -1,5 +1,6 @@
 import { motion as Motion } from 'framer-motion';
 import { useState } from 'react';
+import { MagneticButton, SectionShell } from './MotionPrimitives';
 import SectionHeading from './SectionHeading';
 
 const socialLinks = [
@@ -40,7 +41,7 @@ function Contact() {
   };
 
   return (
-    <section id="contact" className="relative isolate px-4 py-24 sm:px-6 lg:px-8">
+    <SectionShell id="contact">
       <div className="mx-auto max-w-7xl">
         <SectionHeading
           eyebrow="Contact"
@@ -95,12 +96,13 @@ function Contact() {
               />
             </label>
             <div className="mt-5 flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
-              <button
+              <MagneticButton
+                as="button"
                 type="submit"
-                className="focus-ring inline-flex items-center justify-center rounded-full bg-white px-6 py-3 text-sm font-black text-slate-950 transition hover:-translate-y-1 hover:bg-cyan-100"
+                className="bg-white text-slate-950 hover:-translate-y-1 hover:bg-cyan-100"
               >
                 Send message
-              </button>
+              </MagneticButton>
               {status ? <p className="text-sm font-semibold text-cyan-200">{status}</p> : null}
             </div>
           </Motion.form>
@@ -140,7 +142,7 @@ function Contact() {
           </Motion.aside>
         </div>
       </div>
-    </section>
+    </SectionShell>
   );
 }
 

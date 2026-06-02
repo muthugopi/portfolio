@@ -1,4 +1,6 @@
 import { motion as Motion } from 'framer-motion';
+import { MagneticButton, SectionShell } from './MotionPrimitives';
+import { staggerGroup } from './motionVariants';
 import SectionHeading from './SectionHeading';
 
 const projects = [
@@ -70,14 +72,13 @@ function ProjectCard({ project, index }) {
           </div>
           <div className="mt-7">
             {project.href ? (
-              <a
+              <MagneticButton
                 href={project.href}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center justify-center rounded-full bg-white px-5 py-3 text-sm font-black text-slate-950 transition hover:-translate-y-1 hover:bg-cyan-100 focus-ring"
+                external
+                className="bg-white px-5 text-slate-950 hover:-translate-y-1 hover:bg-cyan-100"
               >
                 Launch case {'->'}
-              </a>
+              </MagneticButton>
             ) : (
               <span className="inline-flex rounded-full border border-white/10 bg-white/[0.04] px-5 py-3 text-sm font-bold text-slate-400">
                 Deployment in progress
@@ -92,7 +93,7 @@ function ProjectCard({ project, index }) {
 
 function Projects() {
   return (
-    <section id="projects" className="relative isolate px-4 py-24 sm:px-6 lg:px-8">
+    <SectionShell id="projects">
       <div className="mx-auto max-w-7xl">
         <SectionHeading
           align="left"
@@ -101,11 +102,11 @@ function Projects() {
           description="Large project cards, layered glow, clear tags, and decisive calls to action make the work feel more like product launches than static portfolio tiles."
         />
 
-        <div className="grid auto-rows-fr gap-5 lg:grid-cols-3">
+        <Motion.div className="grid auto-rows-fr gap-5 lg:grid-cols-3" variants={staggerGroup}>
           {projects.map((project, index) => (
             <ProjectCard key={project.title} project={project} index={index} />
           ))}
-        </div>
+        </Motion.div>
 
         <Motion.div
           className="mt-6 flex flex-col gap-4 rounded-[2rem] border border-white/10 bg-white/[0.04] p-6 backdrop-blur-2xl sm:flex-row sm:items-center sm:justify-between"
@@ -117,17 +118,16 @@ function Projects() {
           <p className="max-w-2xl text-base leading-7 text-slate-400">
             Each project prioritizes responsive craft, readable architecture, and an interface that feels finished.
           </p>
-          <a
+          <MagneticButton
             href="https://github.com/muthugopi"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center justify-center rounded-full border border-cyan-300/30 bg-cyan-300/10 px-5 py-3 text-sm font-black text-cyan-100 transition hover:-translate-y-1 hover:bg-cyan-300 hover:text-slate-950 focus-ring"
+            external
+            className="border border-cyan-300/30 bg-cyan-300/10 px-5 text-cyan-100 hover:-translate-y-1 hover:bg-cyan-300 hover:text-slate-950"
           >
             Explore GitHub
-          </a>
+          </MagneticButton>
         </Motion.div>
       </div>
-    </section>
+    </SectionShell>
   );
 }
 
