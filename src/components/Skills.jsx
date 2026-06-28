@@ -16,7 +16,7 @@ const skillGroups = [
     title: 'Backend logic',
     focus: 'API foundations',
     summary: 'Creating reliable server flows, authentication logic, protected routes, and structured API behavior.',
-    tools: ['Node.js', 'Express', 'JWT', 'REST APIs'],
+    tools: ['Node.js', 'Express', 'JWT', 'REST APIs', 'Django'],
     highlight: 'Backend',
     size: '',
   },
@@ -24,7 +24,7 @@ const skillGroups = [
     title: 'Data systems',
     focus: 'Structured data',
     summary: 'Working with relational and document data models for storage, querying, and practical product features.',
-    tools: ['MySQL', 'MongoDB', 'Python', 'Analytics'],
+    tools: ['MySQL', 'MongoDB', 'Python'],
     highlight: 'Database',
     size: '',
   },
@@ -115,7 +115,7 @@ function Skills() {
           transition={{ duration: 0.7, ease: 'easeOut' }}
         >
           <div className="flex min-w-max animate-marquee gap-4 text-5xl font-black uppercase tracking-[-0.05em] text-white/10 sm:text-7xl">
-            {['React', 'Tailwind', 'Motion', 'Node', 'SQL', 'UX', 'Performance', 'SEO'].map((item) => (
+            {['React', 'Tailwind', 'Motion', 'Node', 'SQL', 'UX', 'Performance', 'SEO', 'Python', 'Data Analytics', 'Django', 'Flask'].map((item) => (
               <span key={item}>{item}</span>
             ))}
             {['React', 'Tailwind', 'Motion', 'Node', 'SQL', 'UX', 'Performance', 'SEO'].map((item) => (

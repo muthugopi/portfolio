@@ -85,133 +85,71 @@ function CursorGlow() {
 function Loader() {
   const [labelIndex, setLabelIndex] = useState(0);
 
+  // Cycle through the unused loaderLabels array
   useEffect(() => {
-    const id = setInterval(() => {
-      setLabelIndex((i) => (i + 1) % loaderLabels.length);
-    }, 2000);
-    return () => clearInterval(id);
+    const interval = setInterval(() => {
+      setLabelIndex((prev) => (prev + 1) % loaderLabels.length);
+    }, 400); // Change text every 400ms
+    return () => clearInterval(interval);
   }, []);
 
   return (
     <Motion.div
-      className="fixed inset-0 z-50 flex items-center justify-center bg-[#03050a] backdrop-blur-sm"
+      className="fixed inset-0 z-50 flex flex-col items-center justify-center bg-[#03050a] select-none"
       initial={{ opacity: 1 }}
-      exit={{ opacity: 0, transition: { duration: 0.4, ease: 'easeInOut' } }}
+      exit={{ opacity: 0, transition: { duration: 0.5, ease: [0.16, 1, 0.3, 1] } }}
     >
-      {/* Animated background glow */}
-      <Motion.div
-        className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(0,229,255,0.05),transparent_70%)]"
-        animate={{ opacity: [0.5, 1, 0.5] }}
-        transition={{ duration: 3, repeat: Infinity, ease: 'easeInOut' }}
-      />
+      {/* Premium Ambient Layer */}
+      <div className="absolute inset-0 overflow-hidden pointer-events-none">
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[350px] h-[350px] bg-cyan-500/[0.05] blur-[100px] rounded-full" />
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[180px] h-[180px] bg-fuchsia-500/[0.06] blur-[60px] rounded-full" />
+      </div>
 
-      {/* Animated particles around loader */}
-      {[0, 1, 2].map((i) => (
-        <Motion.div
-          key={i}
-          className="absolute h-1 w-1 rounded-full bg-cyan-400/40"
-          animate={{
-            x: [0, Math.cos((i * 120) * (Math.PI / 180)) * 60, 0],
-            y: [0, Math.sin((i * 120) * (Math.PI / 180)) * 60, 0],
-          }}
-          transition={{ duration: 4, delay: i * 0.3, repeat: Infinity, ease: 'easeInOut' }}
-        />
-      ))}
-
-      <Motion.div className="relative flex w-56 flex-col items-center">
-
-        {/* Monogram container with glow */}
-        <Motion.div
-          className="relative mb-12 flex h-14 w-14 items-center justify-center"
-          initial={{ opacity: 0, scale: 0.8 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.6, ease: 'easeOut' }}
-        >
-          {/* Glow background */}
+      <div className="relative flex flex-col items-center gap-6">
+        {/* The Spinner Core */}
+        <div className="relative h-16 w-16 flex items-center justify-center">
+          {/* Subtle outer static track */}
+          <div className="absolute inset-0 rounded-full border-[1.5px] border-white/[0.04]" />
+          
+          {/* Active Gradient Spinner (matches your cyan/fuchsia theme) */}
           <Motion.div
-            className="absolute inset-0 rounded-lg bg-cyan-400/20 blur-xl"
-            animate={{ scale: [1, 1.1, 1], opacity: [0.5, 0.8, 0.5] }}
-            transition={{ duration: 2.5, repeat: Infinity, ease: 'easeInOut' }}
+            className="absolute inset-0 rounded-full border-[1.5px] border-transparent border-t-cyan-400 border-r-fuchsia-400"
+            animate={{ rotate: 360 }}
+            transition={{
+              duration: 0.8,
+              repeat: Infinity,
+              ease: "linear"
+            }}
           />
-          {/* Monogram */}
+          
+          {/* Core Glow Pulse */}
           <Motion.div
-            className="relative flex items-center justify-center rounded-lg border border-cyan-400/30 bg-gradient-to-br from-slate-950 via-[#0e1623] to-slate-950 px-4 py-3 text-sm font-bold tracking-wider text-cyan-100 shadow-2xl"
-            animate={{ borderColor: ['rgba(34, 211, 238, 0.3)', 'rgba(34, 211, 238, 0.6)', 'rgba(34, 211, 238, 0.3)'] }}
-            transition={{ duration: 2, repeat: Infinity, ease: 'easeInOut' }}
-          >
-            MJ
-          </Motion.div>
-        </Motion.div>
+            className="h-2.5 w-2.5 rounded-full bg-gradient-to-tr from-cyan-400 to-fuchsia-400 shadow-[0_0_15px_rgba(34,211,238,0.5)]"
+            animate={{ scale: [0.9, 1.25, 0.9], opacity: [0.7, 1, 0.7] }}
+            transition={{
+              duration: 1.5,
+              repeat: Infinity,
+              ease: "easeInOut"
+            }}
+          />
+        </div>
 
-        {/* Progress bar container */}
-        <Motion.div
-          className="mb-8 w-full"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 0.5, delay: 0.2 }}
-        >
-          <Motion.div className="relative mb-2 h-1 w-full overflow-hidden rounded-full bg-white/5 shadow-inner">
-            {/* Gradient progress fill */}
-            <Motion.div
-              className="h-full bg-gradient-to-r from-transparent via-cyan-400 to-transparent"
-              animate={{
-                marginLeft: ['0%', '15%', '100%'],
-                width: ['0%', '70%', '0%'],
-              }}
-              transition={{ duration: 2, ease: [0.4, 0, 0.2, 1], repeat: Infinity }}
-            />
-            {/* Glow effect */}
-            <Motion.div
-              className="absolute inset-0 bg-gradient-to-r from-transparent via-cyan-300 to-transparent opacity-0 blur-sm"
-              animate={{ opacity: [0, 0.6, 0] }}
-              transition={{ duration: 2, ease: [0.4, 0, 0.2, 1], repeat: Infinity }}
-            />
-          </Motion.div>
-        </Motion.div>
-
-        {/* Label with enhanced styling */}
-        <AnimatePresence mode="wait">
-          <Motion.div
-            key={labelIndex}
-            className="text-center"
-            initial={{ opacity: 0, y: 4 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -4 }}
-            transition={{ duration: 0.3 }}
-          >
-            <Motion.p
-              className="text-xs font-medium uppercase tracking-[0.15em] text-cyan-100/60"
+        {/* Dynamic Micro-Typo wrapping the loaderLabels */}
+        <div className="h-4 overflow-hidden relative w-32 flex justify-center">
+          <AnimatePresence mode="popLayout">
+            <Motion.span
+              key={labelIndex}
+              initial={{ y: 10, opacity: 0 }}
+              animate={{ y: 0, opacity: [0.5, 1, 0.5] }}
+              exit={{ y: -10, opacity: 0 }}
+              transition={{ duration: 0.3 }}
+              className="absolute text-[10px] font-medium tracking-[0.25em] text-slate-400 uppercase"
             >
               {loaderLabels[labelIndex]}
-            </Motion.p>
-          </Motion.div>
-        </AnimatePresence>
-
-        {/* Subtle dots indicator */}
-        <Motion.div className="mt-6 flex gap-2">
-          {[0, 1, 2].map((i) => (
-            <Motion.div
-              key={i}
-              className="h-1.5 w-1.5 rounded-full bg-white/20"
-              animate={{
-                backgroundColor: [
-                  'rgba(255, 255, 255, 0.2)',
-                  'rgba(34, 211, 238, 0.6)',
-                  'rgba(255, 255, 255, 0.2)',
-                ],
-                scale: [1, 1.3, 1],
-              }}
-              transition={{
-                duration: 1.5,
-                delay: i * 0.2,
-                repeat: Infinity,
-                ease: 'easeInOut',
-              }}
-            />
-          ))}
-        </Motion.div>
-
-      </Motion.div>
+            </Motion.span>
+          </AnimatePresence>
+        </div>
+      </div>
     </Motion.div>
   );
 }
@@ -220,7 +158,8 @@ function App() {
   const [loaded, setLoaded] = useState(false);
 
   useEffect(() => {
-    const timer = window.setTimeout(() => setLoaded(true), 1250);
+    // Slightly extended to 1.5s so the user can enjoy the label cycle
+    const timer = window.setTimeout(() => setLoaded(true), 1500); 
     return () => window.clearTimeout(timer);
   }, []);
 
@@ -228,12 +167,15 @@ function App() {
     <div className="relative min-h-screen overflow-x-hidden text-slate-100">
       <BackgroundSystem />
       <CursorGlow />
-      <AnimatePresence>{!loaded && <Loader />}</AnimatePresence>
+      
+      <AnimatePresence>
+        {!loaded && <Loader />}
+      </AnimatePresence>
 
       <Motion.main
         initial={{ opacity: 0 }}
         animate={{ opacity: loaded ? 1 : 0 }}
-        transition={{ duration: 0.55, ease: 'easeOut' }}
+        transition={{ duration: 0.6, ease: 'easeOut', delay: 0.1 }}
       >
         <Header />
         <About />
