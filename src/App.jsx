@@ -85,65 +85,59 @@ function CursorGlow() {
 function Loader() {
   const [labelIndex, setLabelIndex] = useState(0);
 
-  // Cycle through the unused loaderLabels array
   useEffect(() => {
     const interval = setInterval(() => {
       setLabelIndex((prev) => (prev + 1) % loaderLabels.length);
-    }, 400); // Change text every 400ms
+    }, 900); // Slower transitions feel more stable and deliberate
     return () => clearInterval(interval);
   }, []);
 
+  // Animation variants for the unique 2x2 grid blocks
+  const blockVariants = {
+    animate: (i) => ({
+      scale: [1, 0.4, 1],
+      opacity: [1, 0.3, 1],
+      transition: {
+        duration: 1.2,
+        repeat: Infinity,
+        ease: "easeInOut",
+        delay: i * 0.15, // Staggered delay creates a fluid wave effect
+      },
+    }),
+  };
+
   return (
     <Motion.div
-      className="fixed inset-0 z-50 flex flex-col items-center justify-center bg-[#03050a] select-none"
+      className="fixed inset-0 z-50 flex flex-col items-center justify-center bg-zinc-50 dark:bg-zinc-950 select-none"
       initial={{ opacity: 1 }}
-      exit={{ opacity: 0, transition: { duration: 0.5, ease: [0.16, 1, 0.3, 1] } }}
+      exit={{ opacity: 0, transition: { duration: 0.4, ease: "easeInOut" } }}
     >
-      {/* Premium Ambient Layer */}
-      <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[350px] h-[350px] bg-cyan-500/[0.05] blur-[100px] rounded-full" />
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[180px] h-[180px] bg-fuchsia-500/[0.06] blur-[60px] rounded-full" />
-      </div>
-
-      <div className="relative flex flex-col items-center gap-6">
-        {/* The Spinner Core */}
-        <div className="relative h-16 w-16 flex items-center justify-center">
-          {/* Subtle outer static track */}
-          <div className="absolute inset-0 rounded-full border-[1.5px] border-white/[0.04]" />
-          
-          {/* Active Gradient Spinner (matches your cyan/fuchsia theme) */}
-          <Motion.div
-            className="absolute inset-0 rounded-full border-[1.5px] border-transparent border-t-cyan-400 border-r-fuchsia-400"
-            animate={{ rotate: 360 }}
-            transition={{
-              duration: 0.8,
-              repeat: Infinity,
-              ease: "linear"
-            }}
-          />
-          
-          {/* Core Glow Pulse */}
-          <Motion.div
-            className="h-2.5 w-2.5 rounded-full bg-gradient-to-tr from-cyan-400 to-fuchsia-400 shadow-[0_0_15px_rgba(34,211,238,0.5)]"
-            animate={{ scale: [0.9, 1.25, 0.9], opacity: [0.7, 1, 0.7] }}
-            transition={{
-              duration: 1.5,
-              repeat: Infinity,
-              ease: "easeInOut"
-            }}
-          />
+      <div className="relative flex flex-col items-center gap-8">
+        
+        {/* Unique Geometric 2x2 Matrix Loader */}
+        <div className="grid grid-cols-2 gap-1.5 w-9 h-9">
+          {[0, 1, 2, 3].map((index) => (
+            <Motion.div
+              key={index}
+              custom={index}
+              variants={blockVariants}
+              animate="animate"
+              // Clean, single-color sharp blocks with a subtle radius
+              className="w-4 h-4 rounded-[3px] bg-indigo-600 dark:bg-indigo-500"
+            />
+          ))}
         </div>
 
-        {/* Dynamic Micro-Typo wrapping the loaderLabels */}
-        <div className="h-4 overflow-hidden relative w-32 flex justify-center">
+        {/* Dynamic Micro-Typography */}
+        <div className="h-5 overflow-hidden relative w-48 flex justify-center">
           <AnimatePresence mode="popLayout">
             <Motion.span
               key={labelIndex}
-              initial={{ y: 10, opacity: 0 }}
-              animate={{ y: 0, opacity: [0.5, 1, 0.5] }}
-              exit={{ y: -10, opacity: 0 }}
-              transition={{ duration: 0.3 }}
-              className="absolute text-[10px] font-medium tracking-[0.25em] text-slate-400 uppercase"
+              initial={{ y: 8, opacity: 0 }}
+              animate={{ y: 0, opacity: 1 }}
+              exit={{ y: -8, opacity: 0 }}
+              transition={{ duration: 0.25, ease: "linear" }}
+              className="absolute text-[11px] font-semibold tracking-[0.2em] text-zinc-500 dark:text-zinc-400 uppercase"
             >
               {loaderLabels[labelIndex]}
             </Motion.span>
@@ -153,7 +147,6 @@ function Loader() {
     </Motion.div>
   );
 }
-
 function App() {
   const [loaded, setLoaded] = useState(false);
 
