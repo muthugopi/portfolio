@@ -1,6 +1,7 @@
 import { AnimatePresence, motion as Motion, useMotionValue, useReducedMotion, useSpring } from 'framer-motion';
 import { useEffect, useState } from 'react';
 import About from './components/About';
+import Certificates from './components/Certificates';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
 import Header from './components/Header';
@@ -173,6 +174,7 @@ function App() {
         <Header />
         <About />
         <Skills />
+        <Certificates />
         <Projects />
         <Contact />
         <Footer />

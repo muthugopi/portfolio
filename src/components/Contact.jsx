@@ -4,9 +4,9 @@ import { MagneticButton, SectionShell } from './MotionPrimitives';
 import SectionHeading from './SectionHeading';
 
 const socialLinks = [
-  { label: 'LinkedIn', href: 'https://www.linkedin.com/in/muthugopi-j-848459371/' },
-  { label: 'GitHub', href: 'https://github.com/muthugopi' },
-  { label: 'Email', href: 'mailto:muthugopij@gmail.com' },
+  { label: 'LinkedIn', icon: 'bi-linkedin', href: 'https://www.linkedin.com/in/muthugopi-j-848459371/' },
+  { label: 'GitHub', icon: 'bi-github', href: 'https://github.com/muthugopi' },
+  { label: 'Email', icon: 'bi-envelope-fill', href: 'mailto:muthugopij@gmail.com' },
 ];
 
 function Contact() {
@@ -133,8 +133,8 @@ function Contact() {
                     rel={link.href.startsWith('http') ? 'noopener noreferrer' : undefined}
                     className="focus-ring flex items-center justify-between rounded-2xl border border-white/10 bg-black/20 px-4 py-4 text-sm font-black text-white transition hover:-translate-y-1 hover:border-cyan-300/40"
                   >
-                    {link.label}
-                    <span className="text-cyan-200">{'->'}</span>
+                    <span className="flex items-center gap-3"><i aria-hidden="true" className={`bi ${link.icon} text-lg text-cyan-200`} />{link.label}</span>
+                    <i aria-hidden="true" className="bi bi-arrow-up-right text-cyan-200" />
                   </a>
                 ))}
               </div>

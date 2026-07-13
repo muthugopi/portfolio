@@ -11,7 +11,7 @@ const projects = [
     tags: ['React', 'Node.js', 'MySQL', 'JWT'],
     href: 'https://authentication-gray-five.vercel.app',
     gradient: 'from-cyan-300 via-violet-400 to-fuchsia-400',
-    className: 'lg:col-span-2 lg:row-span-2',
+    icon: 'bi-shield-lock-fill',
     stat: '01',
   },
   {
@@ -21,6 +21,7 @@ const projects = [
     tags: ['React', 'Tailwind', 'Express', 'REST'],
     href: 'https://emix-community.vercel.app',
     gradient: 'from-violet-300 to-pink-500',
+    icon: 'bi-people-fill',
     className: '',
     stat: '02',
   },
@@ -31,7 +32,7 @@ const projects = [
     tags: ['C++', 'CLI', 'STL', 'File I/O'],
     href: 'https://github.com/muthugopi/fundflow',
     gradient: 'from-amber-300 to-orange-500',
-    className: '',
+    icon: 'bi-terminal-fill',
     stat: '03',
   },
   {
@@ -41,15 +42,15 @@ const projects = [
     tags: ['Django', 'Bootstrap', 'MySQL', ' Javascript'],
     href:  'https://github.com/muthugopi/anonyms',
     gradient: 'from-amber-300 to-orange-500',
-    className: '',
-    stat: '03',
+    icon: 'bi-incognito',
+    stat: '04',
   },
 ];
 
 function ProjectCard({ project, index }) {
   return (
     <Motion.article
-      className={`group glass-panel relative min-h-[24rem] overflow-hidden rounded-[2rem] p-6 ${project.className}`}
+      className="group glass-panel relative min-h-[25rem] overflow-hidden rounded-[2rem] p-6"
       initial={{ opacity: 0, y: 28 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, amount: 0.24 }}
@@ -62,8 +63,8 @@ function ProjectCard({ project, index }) {
         <div>
           <div className="flex items-start justify-between gap-4">
             <div>
-              <p className="text-xs font-bold uppercase tracking-[0.34em] text-cyan-200/80">{project.label}</p>
-              <h3 className="mt-5 max-w-2xl text-4xl font-black leading-none tracking-[-0.05em] text-white sm:text-5xl">
+              <p className="flex items-center gap-2 text-xs font-bold uppercase tracking-[0.26em] text-cyan-200/80"><i aria-hidden="true" className={`bi ${project.icon} text-sm`} />{project.label}</p>
+              <h3 className="mt-5 max-w-2xl text-3xl font-black leading-none tracking-[-0.05em] text-white sm:text-4xl">
                 {project.title}
               </h3>
             </div>
@@ -87,7 +88,7 @@ function ProjectCard({ project, index }) {
                 external
                 className="bg-white px-5 text-slate-950 hover:-translate-y-1 hover:bg-cyan-100"
               >
-                Launch case {'->'}
+                Launch case <i aria-hidden="true" className="bi bi-arrow-up-right" />
               </MagneticButton>
             ) : (
               <span className="inline-flex rounded-full border border-white/10 bg-white/[0.04] px-5 py-3 text-sm font-bold text-slate-400">
@@ -112,7 +113,7 @@ function Projects() {
           description="Large project cards, layered glow, clear tags, and decisive calls to action make the work feel more like product launches than static portfolio tiles."
         />
 
-        <Motion.div className="grid auto-rows-fr gap-5 lg:grid-cols-3" variants={staggerGroup}>
+        <Motion.div className="grid auto-rows-fr gap-5 md:grid-cols-2" variants={staggerGroup}>
           {projects.map((project, index) => (
             <ProjectCard key={project.title} project={project} index={index} />
           ))}
@@ -133,7 +134,7 @@ function Projects() {
             external
             className="border border-cyan-300/30 bg-cyan-300/10 px-5 text-cyan-100 hover:-translate-y-1 hover:bg-cyan-300 hover:text-slate-950"
           >
-            Explore GitHub
+            <i aria-hidden="true" className="bi bi-github text-base" /> Explore GitHub
           </MagneticButton>
         </Motion.div>
       </div>

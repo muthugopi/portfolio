@@ -10,9 +10,9 @@ const navItems = [
 ];
 
 const socials = [
-  { label: 'GH', href: 'https://github.com/muthugopi' },
-  { label: 'IN', href: 'https://www.linkedin.com/in/muthugopi-j-848459371/' },
-  { label: 'ME', href: 'mailto:muthugopij@gmail.com' },
+  { label: 'GitHub', icon: 'bi-github', href: 'https://github.com/muthugopi' },
+  { label: 'LinkedIn', icon: 'bi-linkedin', href: 'https://www.linkedin.com/in/muthugopi-j-848459371/' },
+  { label: 'Email', icon: 'bi-envelope-fill', href: 'mailto:muthugopij@gmail.com' },
 ];
 
 function Header() {
@@ -90,7 +90,7 @@ function Header() {
                     className="grid h-12 w-12 place-items-center rounded-full border border-white/10 bg-white/[0.04] text-xs font-black text-slate-300 transition hover:-translate-y-1 hover:border-cyan-300/40 hover:text-cyan-200 focus-ring"
                     aria-label={item.label}
                   >
-                    {item.label}
+                    <i aria-hidden="true" className={`bi ${item.icon} text-lg`} />
                   </a>
                 ))}
               </div>

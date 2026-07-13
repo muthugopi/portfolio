@@ -38,6 +38,25 @@ const skillGroups = [
   },
 ];
 
+const toolIcons = {
+  'React': 'bi bi-filetype-jsx text-cyan-200',
+  'Tailwind CSS': 'bi bi-wind text-cyan-200',
+  'Framer Motion': 'bi bi-stars text-violet-200',
+  'Responsive UI': 'bi bi-phone text-slate-200',
+  'Node.js': 'bi bi-braces text-emerald-200',
+  'Express': 'bi bi-diagram-3 text-slate-200',
+  'JWT': 'bi bi-shield-lock text-amber-200',
+  'REST APIs': 'bi bi-arrow-left-right text-sky-200',
+  'Django': 'bi bi-server text-emerald-200',
+  'MySQL': 'bi bi-database text-blue-200',
+  'MongoDB': 'bi bi-collection text-emerald-200',
+  'Python': 'bi bi-filetype-py text-yellow-200',
+  'Vite': 'bi bi-lightning-charge text-violet-200',
+  'SEO': 'bi bi-search text-cyan-200',
+  'Accessibility': 'bi bi-universal-access text-pink-200',
+  'Optimization': 'bi bi-speedometer2 text-orange-200',
+};
+
 function Skills() {
   return (
     <SectionShell id="skills">
@@ -89,7 +108,7 @@ function Skills() {
                           viewport={{ once: true }}
                           transition={{ duration: 0.45, delay: index * 0.06 + toolIndex * 0.05, ease: 'easeOut' }}
                         >
-                          <span className="h-1.5 w-1.5 rounded-full bg-slate-300" />
+                          <i aria-hidden="true" className={`${toolIcons[tool] || 'bi bi-code-slash text-slate-300'} text-base`} />
                           <span className="text-sm font-semibold text-slate-300">{tool}</span>
                         </Motion.div>
                       ))}
