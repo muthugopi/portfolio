@@ -45,6 +45,17 @@ const projects = [
     icon: 'bi-incognito',
     stat: '04',
   },
+  {
+    title: 'Emix Notes',
+    label: 'Notes Summerizer, Last minute notes',
+    description: 'A site where student can generate exam focused and important 2-mark, 5-mark question by submitting their notes, .',
+    tags: ['LaTeX', 'Tailwind', 'Javascript', 'LLM'],
+    href: 'https://emix-notes.netlify.app',
+    gradient: 'from-violet-300 to-pink-500',
+    icon: 'bi-people-fill',
+    className: '',
+    stat: '05',
+  },
 ];
 
 function ProjectCard({ project, index }) {
