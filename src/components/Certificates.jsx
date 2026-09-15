@@ -32,6 +32,13 @@ const certificates = [
     description: 'Consistent Pace • Podium Finish',
     image: '/IT_3rd.jpg',
   },
+  {
+    title: 'Technical Quiz — 3rd Place',
+    issuer: 'ECE Department',
+    year: '2026',
+    description: 'Third place at the Technical Quiz inter-department competition.',
+    image: '/ECE_3rd.png',
+  },
 ];
 
 function Certificates() {
