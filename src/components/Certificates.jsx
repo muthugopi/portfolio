@@ -6,7 +6,7 @@ import SectionHeading from './SectionHeading';
 const certificates = [
   {
     title: 'BIZNOVEXA // P1',
-    issuer: 'CSBS',
+    issuer: 'CSBS Department',
     year: '2026',
     description: 'Secured Pole Position and converted it into victory',
     image: '/CSBS_1st.jpg',
@@ -20,24 +20,31 @@ const certificates = [
   },
   {
     title: "ASTRYX'26 // P2",
-    issuer: 'IT',
+    issuer: 'IT Department',
     year: '2026',
     description: 'Started on Pole • Finished P2 ',
     image: '/IT_2nd.jpg',
   },
   {
     title: 'TECHQUEST // P3',
-    issuer: 'IT',
+    issuer: 'IT Department',
     year: '2026',
     description: 'Consistent Pace • Podium Finish',
     image: '/IT_3rd.jpg',
   },
   {
     title: 'Technical Quiz — 3rd Place',
-    issuer: 'ECE Department',
+    issuer: 'ECE [HOME DEPT]',
     year: '2026',
-    description: 'Third place at the Technical Quiz inter-department competition.',
+    description: 'Third place at the Technical Quiz inter-department competition. First ever podium in 3rd semester',
     image: '/ECE_3rd.png',
+  },
+  {
+    title: "PPT Presentation ",
+    issuer: 'ECE [HOME DEPT]',
+    year: '2026',
+    description: 'Second consecutive podium in 3rd semester! ',
+    image: '/ECE_PPT_3rd.jpg',
   },
 ];
 
