@@ -33,14 +33,14 @@ const certificates = [
     image: '/IT_3rd.jpg',
   },
   {
-    title: 'Technical Quiz — 3rd Place',
+    title: 'Technical Quiz // P3',
     issuer: 'ECE [HOME DEPT]',
     year: '2026',
     description: 'Third place at the Technical Quiz inter-department competition. First ever podium in 3rd semester',
     image: '/ECE_3rd.png',
   },
   {
-    title: "PPT Presentation ",
+    title: "PPT Presentation // P3 ",
     issuer: 'ECE [HOME DEPT]',
     year: '2026',
     description: 'Second consecutive podium in 3rd semester! ',

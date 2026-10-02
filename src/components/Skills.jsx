@@ -8,7 +8,7 @@ const skillGroups = [
     title: 'Interface engineering',
     focus: 'Frontend craft',
     summary: 'Building responsive, polished product interfaces with reusable React components and clean Tailwind systems.',
-    tools: ['React', 'Tailwind CSS', 'Framer Motion', 'Responsive UI'],
+    tools: ['React', 'Tailwind CSS', 'Bootstrap', 'Framer Motion', 'Responsive UI'],
     highlight: 'Frontend',
     size: 'lg:col-span-2',
   },
@@ -35,6 +35,21 @@ const skillGroups = [
     tools: ['Vite', 'SEO', 'Accessibility', 'Optimization'],
     highlight: 'Learning',
     size: 'lg:col-span-2',
+  },
+  {
+    title: 'Machine learning',
+    focus: 'ML foundations',
+    summary: 'Building and experimenting with practical machine learning models for prediction, classification, and text-based problems using Python.',
+    tools: [
+      'Python',
+      'NumPy',
+      'Pandas',
+      'Matplotlib',
+      'Scikit-learn',
+      'TF-IDF'
+    ],
+    highlight: 'Machine Learning',
+    size: '',
   },
 ];
 
