@@ -1,5 +1,5 @@
 import { motion as Motion, useScroll, useTransform } from 'framer-motion';
-import developerImage from '../assets/developer.png';
+import developerImage from '../assets/developer-1.png';
 import { AnimatedCounter, MagneticButton } from './MotionPrimitives';
 
 const navItems = [
@@ -68,13 +68,34 @@ function Header() {
               Open for product teams
             </div>
 
-            <h1 className="max-w-6xl font-display text-[clamp(2.5rem,8vw,6rem)] font-black leading-[0.78] tracking-[-0.085em] text-white">
+
+            <h1
+              style={{
+                maxWidth: "72rem",
+                fontFamily: "'Bodoni Moda', serif",
+                fontSize: "clamp(2.5rem, 8vw, 6rem)",
+                fontWeight: 400,
+                lineHeight: 0.9,
+                letterSpacing: "-0.055em",
+                color: "#ffffff",
+              }}
+            >
               Electronics
-              <span className="block bg-gradient-to-r from-cyan-200 via-violet-200 to-fuchsia-300 bg-clip-text text-transparent">
+              <span
+                style={{
+                  display: "block",
+                  fontStyle: "italic",
+                  background: "linear-gradient(to right, #a5f3fc, #ddd6fe, #f0abfc)",
+                  WebkitBackgroundClip: "text",
+                  backgroundClip: "text",
+                  WebkitTextFillColor: "transparent",
+                }}
+              >
                 Communication
               </span>
               engineer.
             </h1>
+
 
             <div className="mt-8 grid gap-6 lg:grid-cols-[0.74fr_0.26fr] lg:items-end">
               <p className="max-w-3xl text-lg leading-8 text-slate-300 sm:text-xl">

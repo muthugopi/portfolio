@@ -152,6 +152,13 @@ a {
   will-change: transform;
 }
 
+.font-display {
+  font-family: 'Bodoni Moda', serif;
+  font-weight: 400;
+  letter-spacing: -0.055em;
+  line-height: 0.9;
+}
+
 a,
 button {
   -webkit-tap-highlight-color: transparent;
