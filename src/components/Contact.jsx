@@ -5,7 +5,7 @@ import { MagneticButton, SectionShell } from './MotionPrimitives';
 import SectionHeading from './SectionHeading';
 
 const socialLinks = [
-  { label: 'LinkedIn', icon: 'bi-linkedin', href: 'https://www.linkedin.com/in/muthugopi-j-848459371/' },
+  { label: 'LinkedIn', icon: 'bi-linkedin', href: 'https://www.linkedin.com/in/muthugopi-j-a30b22427' },
   { label: 'GitHub', icon: 'bi-github', href: 'https://github.com/muthugopi' },
   { label: 'Email', icon: 'bi-envelope-fill', href: 'mailto:muthugopij@gmail.com' },
 ];
